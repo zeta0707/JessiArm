@@ -15,7 +15,7 @@ import myconfig as mc
 from myutil import clamp, clampRem, PCA9685
 
 class RobotArm(object):
-    def __init__(self, name="donkey_arm"):
+    def __init__(self, name="JessiArm"):
         
         self.motor0 = PCA9685(channel=0, address=0x40, busnum=1)
         self.motor1 = PCA9685(channel=1, address=0x40, busnum=1)
@@ -140,7 +140,7 @@ class RobotArm(object):
 if __name__ == "__main__":
 
     rospy.init_node("keyboard_control")
-    myArm = RobotArm("donkey_arm")
+    myArm = RobotArm("JessiArm")
 
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
