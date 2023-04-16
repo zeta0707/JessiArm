@@ -15,7 +15,7 @@ import myconfig as mc
 from myutil import clamp, clampRem, PCA9685, trimLimits, radiansToDegrees
 
 class RobotArm(object):
-    def __init__(self, name="donkey_arm"):
+    def __init__(self, name="JessiArm"):
         
         self.motor0 = PCA9685(channel=0, address=0x40, busnum=1)
         self.motor1 = PCA9685(channel=1, address=0x40, busnum=1)

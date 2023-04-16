@@ -2,6 +2,7 @@
 from time import sleep, time
 import myconfig as mc
 import myutil as mu
+import sys
 
 # Import the PCA9685 module.
 import Adafruit_PCA9685
@@ -18,7 +19,7 @@ pwm = Adafruit_PCA9685.PCA9685()
 # Set frequency to 60hz, good for servos.
 pwm.set_pwm_freq(60)
 
-moveHistory = open('/home/jetson/catkin_ws/src/donkey_ros_arm/donkey_control/src/automove.txt', 'r')
+moveHistory = open('automove.txt', 'r')
 # Using readline() 
 
 pwm.set_pwm(0, 1,  mc.MOTOR1_HOME)       

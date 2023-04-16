@@ -5,6 +5,7 @@ from time import sleep
 # Import the PCA9685 module.
 import Adafruit_PCA9685
 from Adafruit_GPIO import I2C
+import myconfig as mc
 
 def get_bus():
     return 1
@@ -18,6 +19,13 @@ pwm = Adafruit_PCA9685.PCA9685()
 pwm.set_pwm_freq(60)
 channel = 0
 
+# Set home position
+pwm.set_pwm(0, 1,  mc.MOTOR1_HOME)       
+pwm.set_pwm(0, 2,  mc.MOTOR2_HOME)  
+pwm.set_pwm(0, 3,  mc.MOTOR3_HOME) 
+pwm.set_pwm(0, 14, mc.MOTOR4_HOME)
+pwm.set_pwm(0, 15, mc.GRIPPER_HOME)
+pwm.set_pwm(0, 0,  mc.MOTOR0_HOME) 
 
 while True:
     try:

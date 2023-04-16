@@ -9,7 +9,7 @@ teleop:
     type: topic
     is_default: true
     message_type: geometry_msgs/Twist
-    topic_name: donkey_teleop
+    topic_name: jessiarm_teleop
     message_value:
       -
         target: linear.x
@@ -33,7 +33,7 @@ teleop:
   human_control:
     type: topic
     message_type: geometry_msgs/Twist
-    topic_name: donkey_teleop
+    topic_name: jessiarm_teleop
     deadman_buttons: [6]
     axis_mappings:
       -

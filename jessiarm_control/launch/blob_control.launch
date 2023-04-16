@@ -1,6 +1,6 @@
 <launch>
   <arg name="find_ball_config"
-       default="$(find donkey_control)/config/find_ball.yaml" />
+       default="$(find jessiarm_control)/config/find_ball.yaml" />
 
   <rosparam command="load" file="$(arg find_ball_config)" />  <node pkg="jessiarm_csicamera" type="webcam_pub.py" name="webcam_pub" />
   <node pkg="jessiarm_cv" type="find_ball.py" name="blob_detector" output="screen" />

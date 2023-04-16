@@ -1,6 +1,6 @@
 <launch>
   <arg name="find_yolo_config"
-       default="$(find donkey_control)/config/yolo_jessiarm.yaml" />
+       default="$(find jessiarm_control)/config/yolo_jessiarm.yaml" />
   <rosparam command="load" file="$(arg find_yolo_config)" />
 
   <node pkg="jessiarm_csicamera" type="webcam_pub.py" name="webcam_pub" />
