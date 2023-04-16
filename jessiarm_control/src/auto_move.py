@@ -18,7 +18,7 @@ pwm = Adafruit_PCA9685.PCA9685()
 # Set frequency to 60hz, good for servos.
 pwm.set_pwm_freq(60)
 
-file1 = open('automove.txt', 'r')
+moveHistory = open('/home/jetson/catkin_ws/src/donkey_ros_arm/donkey_control/src/automove.txt', 'r')
 # Using readline() 
 
 pwm.set_pwm(0, 1,  mc.MOTOR1_HOME)       
@@ -28,9 +28,11 @@ pwm.set_pwm(0, 14, mc.MOTOR4_HOME)
 pwm.set_pwm(0, 15, mc.GRIPPER_HOME)
 pwm.set_pwm(0, 0,  mc.MOTOR0_HOME) 
 
+print("automove starts")
+
 while True:
     # Get next line from file
-    line = file1.readline()
+    line = moveHistory.readline()
     # if line is empty, end of file is reached
     if not line:
         break
@@ -46,10 +48,13 @@ while True:
         sleep(float(time_diff))
     except KeyboardInterrupt:
        break
-    #print(str(motor0)+':'+str(motor1)+':'+str(motor2)+':'+str(motor3)+':'+str(motor4)+':'+str(motor5)+':'+str(time_diff))
+
+    #sys.stdout.write(".")
+    sys.stdout.write(str(motor0)+':'+str(motor1)+':'+str(motor2)+':'+str(motor3)+':'+str(motor4)+':'+str(motor5)+':'+str(time_diff))
+    sys.stdout.flush()
 
 print("automove reached end")
-file1.close()
+moveHistory.close()
 pwm.set_pwm(0, 14, mc.MOTOR4_OFF)
 pwm.set_pwm(0, 15, mc.GRIPPER_OFF)
 pwm.set_pwm(0, 0,  mc.MOTOR0_OFF) 
