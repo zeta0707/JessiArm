@@ -1,10 +1,10 @@
 moveit_setup_assistant_config:
   URDF:
-    package: jessi_arm_description
-    relative_path: urdf/jessi_arm_robot.xacro
+    package: jessiarm_description
+    relative_path: urdf/jessiarm_robot.xacro
     xacro_args: ""
   SRDF:
-    relative_path: config/jessi_arm.srdf
+    relative_path: config/jessiarm.srdf
   CONFIG:
     author_name: ZETA7
     author_email: zeta0807@naver.com

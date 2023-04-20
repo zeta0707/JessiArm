@@ -26,5 +26,5 @@
   <param name="capabilities" value="$(arg capabilities)" />
   <param name="disable_capabilities" value="$(arg disable_capabilities)" />
 
-  <rosparam command="load" file="$(find jessi_arm_moveit)/config/chomp_planning.yaml" />
+  <rosparam command="load" file="$(find jessiarm_moveit)/config/chomp_planning.yaml" />
 </launch>
