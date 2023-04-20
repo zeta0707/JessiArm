@@ -2,7 +2,7 @@
   <arg name="find_ball_config"
        default="$(find jessiarm_control)/config/find_ball.yaml" />
 
-  <rosparam command="load" file="$(arg find_ball_config)" />  <node pkg="jessiarm_csicamera" type="webcam_pub.py" name="webcam_pub" />
+  <rosparam command="load" file="$(arg find_ball_config)" />  <node pkg="jessiarm_camera" type="webcam_pub.py" name="webcam_pub" />
   <node pkg="jessiarm_cv" type="find_ball.py" name="blob_detector" output="screen" />
   <node pkg="jessiarm_control" type="chase_the_ball.py" name="chase_ball" output="screen" />
   <node pkg="jessiarm_control" type="blob_chase.py" name="blob_chase" output="screen" />

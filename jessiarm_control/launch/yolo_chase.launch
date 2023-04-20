@@ -3,7 +3,7 @@
        default="$(find jessiarm_control)/config/yolo_jessiarm.yaml" />
   <rosparam command="load" file="$(arg find_yolo_config)" />
 
-  <node pkg="jessiarm_csicamera" type="webcam_pub.py" name="webcam_pub" />
+  <node pkg="jessiarm_camera" type="webcam_pub.py" name="webcam_pub" />
   <node pkg="jessiarm_control" type="chase_object_yolo.py" name="chase_object" output="screen"/>
   <node pkg="jessiarm_control" type="blob_chase.py" name="blob_chase" output="screen" />
 </launch>

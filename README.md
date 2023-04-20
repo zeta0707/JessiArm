@@ -39,7 +39,7 @@ But, It's written in Korean. Anyway, Here's the link
 ## Packages with Brief Explanation
 
 ```
-├── jessiarm_csicamera => Handling Image data for USB camera 
+├── jessiarm_camera => Handling Image data for USB camera 
 ├── jessiarm_control => Control DIY Arm with Adafruit PCA9685
 ├── jessiarm_cv => Computer Vision Package with Opencv3.4.6
 ├── jessiarm_joy => Control DIY Arm with Gamepad 
@@ -171,11 +171,11 @@ moveit planner -> Move robot arm accordingly
 </p>
 
 ```bash
-#terminal #1, Laptop
-zeta@zeta-nano:~/catkin_ws$ roslaunch jessiarm_description jessiarm.launch
+#terminal #1, Jetson
+jetson@jp4512G:~/catkin_ws$ roslaunch jessiarm_control chase_moveit.launch
 
-#terminal #2, Jetson
-zeta@zeta-nano:~/catkin_ws$ rosrun jessiarm_control chase_moveit.py
+#terminal #2, Laptop
+zeta@zeta-nano:~/catkin_ws$ roslaunch jessiarm_description jessiarm.launch
 ```
 
 ### **6. Moveit planner**
@@ -187,9 +187,9 @@ joint_states publisher -> Move robot arm accordingly
 </p>
 
 ```bash
-#terminal #1, Laptop
-zeta@zeta-nano:~/catkin_ws$ roslaunch jessiarm_moveit demo.launch
+#terminal #1, Jetson
+jetson@jp4512G:~/catkin_ws$ roslaunch jessiarm_control chase_moveit.launch
 
-#terminal #2, Jetson
-zeta@zeta-nano:~/catkin_ws$ rosrun jessiarm_control chase_moveit.py
+#terminal #2, Laptop
+zeta@zeta-nano:~/catkin_ws$ roslaunch jessiarm_moveit demo.launch
 ```

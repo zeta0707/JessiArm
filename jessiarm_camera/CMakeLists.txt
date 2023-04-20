@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(jessiarm_csicamera)
+project(jessiarm_camera)
 
 set(OpenCV_INCLUDE_DIRS "/usr/include/opencv4;/usr/include")
 
